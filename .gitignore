@@ -1,0 +1,7 @@
+/mojolicious-plugin-jquery-*
+/.build
+/_build*
+/Build
+MYMETA.*
+!META.json
+/.prove
