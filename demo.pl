@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 use Mojolicious::Lite;
-plugin 'jquery';
+plugin 'JQuery';
 
 get '/' => 'index';
 app->start;
