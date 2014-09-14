@@ -18,7 +18,7 @@ This is done using [Mojolicious::Plugin::AssetPack](https://metacpan.org/pod/Moj
 ## Mojolicious::Lite
 
     use Mojolicious::Lite;
-    plugin "jquery";
+    plugin "JQuery";
     get "/" => "index";
     app->start;
 
@@ -27,7 +27,7 @@ This is done using [Mojolicious::Plugin::AssetPack](https://metacpan.org/pod/Moj
     sub startup {
       my $self = shift;
 
-      $self->plugin("jquery");
+      $self->plugin("JQuery");
     }
 
 ## Template
@@ -93,9 +93,9 @@ Returns the base path to the assets bundled with this module.
 ## register
 
     $app->plugin(
-      jquery => {
+      JQuery => {
         migrate => $bool, # default false
-        jquery_1 => $bool # default false
+        jquery_1 => $bool # default false (prevent migrate inclusion)
       },
     );
 
@@ -109,7 +109,8 @@ Default values:
 - jquery\_1
 
     This will include the last 1.x.x JQuery version shipped with this plugin.
-    Set this to 1 if you want to use this version.
+    Set this to 1 if you want to use this version. 
+    (This option will prevent JQuery Migrate inclusion)
 
 # CREDITS
 

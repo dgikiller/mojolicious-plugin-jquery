@@ -46,6 +46,17 @@
       }
    },
    "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/dgikiller/mojolicious-plugin-jquery/issues"
+      },
+      "homepage" : "https://github.com/dgikiller/mojolicious-plugin-jquery",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/dgikiller/mojolicious-plugin-jquery.git",
+         "web" : "https://github.com/dgikiller/mojolicious-plugin-jquery"
+      }
+   },
    "version" : "2.1.1",
    "x_contributors" : [
       "skullbocks <dgikille@gmail.com>"
