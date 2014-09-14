@@ -20,7 +20,7 @@ This is done using L<Mojolicious::Plugin::AssetPack>.
 =head2 Mojolicious::Lite
 
   use Mojolicious::Lite;
-  plugin "jquery";
+  plugin "JQuery";
   get "/" => "index";
   app->start;
 
@@ -29,7 +29,7 @@ This is done using L<Mojolicious::Plugin::AssetPack>.
   sub startup {
     my $self = shift;
 
-    $self->plugin("jquery");
+    $self->plugin("JQuery");
   }
 
 =head2 Template
@@ -118,9 +118,9 @@ sub asset_path {
 =head2 register
 
   $app->plugin(
-    jquery => {
+    JQuery => {
       migrate => $bool, # default false
-      jquery_1 => $bool # default false
+      jquery_1 => $bool # default false (prevent migrate inclusion)
     },
   );
 
@@ -136,7 +136,8 @@ Set this to 1 if you want to include this js.
 =item * jquery_1
 
 This will include the last 1.x.x JQuery version shipped with this plugin.
-Set this to 1 if you want to use this version.
+Set this to 1 if you want to use this version. 
+(This option will prevent JQuery Migrate inclusion)
 
 =back
 
