@@ -21,7 +21,7 @@ for my $mode ( sort { $mode{$a} <=> $mode{$b} } keys %mode ) {
         $t->element_exists(qq(script[src^="/packed/jquery-"]));
     }
     else {
-        $t->element_exists(qq(script[src^="/js/jquery-2.x"]));
+        $t->element_exists(qq(script[src^="/js/jquery-2."]));
     }
 }
 

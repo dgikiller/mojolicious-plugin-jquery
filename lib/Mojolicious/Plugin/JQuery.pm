@@ -1,4 +1,8 @@
 package Mojolicious::Plugin::JQuery;
+use File::Find;
+use File::Path ();
+use File::Spec::Functions qw( catdir catfile splitdir );
+use feature 'say';
 
 =head1 NAME
 
@@ -66,9 +70,9 @@ This is done using L<Mojolicious::Plugin::AssetPack>.
 Following the list of the static files of this project. All js are uncompressed
 for developing.
 
-  js/jquery-1.x.js
-  js/jquery-2.x.js
-  js/jquery-migrate.js
+  js/jquery-1.11.1.js
+  js/jquery-2.1.1.js
+  js/jquery-migrate-1.2.1.js
 
 =head1 Versions installed
 
@@ -145,19 +149,57 @@ Set this to 1 if you want to use this version.
 
 sub register {
     my ( $self, $app, $config ) = @_;
+    my $file_type = "js";
 
     $app->plugin('AssetPack') unless eval { $app->asset };
 
     $config->{migrate}  //= 0;
     $config->{jquery_1} //= 0;
 
+    my $location = "/" . $file_type . "/";
+    my @files
+        = $self->find_files( [ $self->asset_path . '/' . $file_type ],
+        $file_type );
+
     push @{ $app->static->paths }, $self->asset_path;
     $app->asset(
-        'jquery.js' => $config->{migrate}
-            && !( $config->{jquery_1} ) ? ('/js/jquery-migrate.js') : (),
-        $config->{jquery_1} ? ('/js/jquery-1.x.js') : ('/js/jquery-2.x.js')
+        'jquery.js' => $config->{migrate} && !( $config->{jquery_1} )
+        ? ( $location
+                . ( grep /^jquery-migrate-(\d+)\.(\d+)\.(\d+).js/, @files )[0]
+            )
+        : (),
+        $config->{jquery_1}
+        ? ( $location . ( grep /^jquery-1\.(\d+)\.(\d+)\.js$/, @files )[0] )
+        : ( $location . ( grep /^jquery-2\.(\d+)\.(\d+)\.js$/, @files )[0] )
     );
 
+}
+
+=head2 find_files
+
+  @files = Mojolicious::Plugin::JQuery->find_files($dir,$type);
+  @files = $self->find_files($dir,$type);
+
+Search a given file type in all directories of the array.
+
+=cut
+
+sub find_files {
+    my $self = shift;
+    my $dir  = shift;
+    my $type = shift;
+    my @files;
+    find(
+        {   follow   => 1,
+            no_chdir => 1,
+            wanted   => sub {
+                return unless -f;
+                push @files, File::Basename::basename($_) if $_ =~ /\.$type$/;
+            },
+        },
+        @{$dir},
+    );
+    return @files;
 }
 
 =head1 CREDITS
