@@ -12,7 +12,7 @@
       "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
       "version" : "2"
    },
-   "name" : "mojolicious-plugin-jquery",
+   "name" : "Mojolicious-Plugin-JQuery",
    "no_index" : {
       "directory" : [
          "t",
@@ -36,6 +36,8 @@
       },
       "runtime" : {
          "requires" : {
+            "Mojolicious" : "5.00",
+            "Mojolicious::Plugin::AssetPack" : "0.21",
             "perl" : "5.008005"
          }
       },
@@ -57,8 +59,10 @@
          "web" : "https://github.com/dgikiller/mojolicious-plugin-jquery"
       }
    },
-   "version" : "2.1.1",
+   "version" : "2.11000",
    "x_contributors" : [
+      "Ettore Di Giacinto <mudler@dark-lab.net>",
+      "Ferro <dgikiller@users.noreply.github.com>",
       "skullbocks <dgikille@gmail.com>"
    ]
 }

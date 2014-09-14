@@ -64,9 +64,9 @@ This is done using [Mojolicious::Plugin::AssetPack](https://metacpan.org/pod/Moj
 Following the list of the static files of this project. All js are uncompressed
 for developing.
 
-    js/jquery-1.x.js
-    js/jquery-2.x.js
-    js/jquery-migrate.js
+    js/jquery-1.11.1.js
+    js/jquery-2.1.1.js
+    js/jquery-migrate-1.2.1.js
 
 # Versions installed
 
@@ -111,6 +111,13 @@ Default values:
     This will include the last 1.x.x JQuery version shipped with this plugin.
     Set this to 1 if you want to use this version. 
     (This option will prevent JQuery Migrate inclusion)
+
+## find\_files
+
+    @files = Mojolicious::Plugin::JQuery->find_files($dir,$type);
+    @files = $self->find_files($dir,$type);
+
+Search a given file type in all directories of the array.
 
 # CREDITS
 
