@@ -150,18 +150,13 @@ sub register {
     $config->{migrate}  //= 0;
     $config->{jquery_1} //= 0;
 
-    my $version
-        = $config->{jquery_1} ? ('/js/jquery-1.x.js') : ('/js/jquery-2.x.js');
-
     push @{ $app->static->paths }, $self->asset_path;
+    $app->asset(
+        'jquery.js' => $config->{migrate}
+            && !( $config->{jquery_1} ) ? ('/js/jquery-migrate.js') : (),
+        $config->{jquery_1} ? ('/js/jquery-1.x.js') : ('/js/jquery-2.x.js')
+    );
 
-    if ( @{ $config->{js} } ) {
-        $app->asset(
-            'jquery.js' => $config->{migrate}
-                && !( $config->{jquery_1} ) ? ('/js/jquery-migrate.js') : (),
-            $version
-        );
-    }
 }
 
 =head1 CREDITS
