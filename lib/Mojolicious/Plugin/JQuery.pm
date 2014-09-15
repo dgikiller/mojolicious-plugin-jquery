@@ -1,8 +1,5 @@
 package Mojolicious::Plugin::JQuery;
 use File::Find;
-use File::Path ();
-use File::Spec::Functions qw( catdir catfile splitdir );
-use feature 'say';
 
 =head1 NAME
 
@@ -10,7 +7,7 @@ Mojolicious::Plugin::JQuery - Mojolicious + http://jquery.com/
 
 =head1 VERSION
 
-2.1.1
+2.11000
 
 =head1 DESCRIPTION
 
@@ -84,7 +81,7 @@ This module ship the following version of JQuery and JQuery Migrate:
 
 =over 4
 
-=item * js/jquery-migrate.js
+=item * jquery-migrate
 
 The JQuery migrate plugin allow to use old plugin restoring the deprecated functions
 on JQuery 2.x. You can use it simply enabling the migrate option on this plugin.
@@ -97,7 +94,7 @@ use Mojo::Base 'Mojolicious::Plugin';
 use File::Spec::Functions 'catdir';
 use Cwd ();
 
-our $VERSION = '2.11000';
+our $VERSION = '0.01';
 
 =head1 METHODS
 
@@ -182,6 +179,21 @@ sub register {
 
 Search a given file type in all directories of the array.
 
+Required parameters: 
+
+=over 4
+
+=item * $dir
+
+This must be a reference to array of directories where we are looking for
+our files.
+
+=item * $type
+
+This is a string of the file's extension that we are looking for.
+
+=back
+
 =cut
 
 sub find_files {
@@ -204,8 +216,8 @@ sub find_files {
 
 =head1 CREDITS
 
-The project L<jquery|https://github.com/jquery/jquery> is an opensource project with
-a lot of L<contributors|https://github.com/jquery/jquery/graphs/contributors>
+L<JQuery|https://github.com/jquery/jquery> is an opensource project with
+a lot of L<contributors|https://github.com/jquery/jquery/graphs/contributors>, thank you.
 
 Thanks even to L<jhthorsen|https://github.com/jhthorsen> because this plugin is widely based
 on his L<Bootstrap3 plugin|https://github.com/jhthorsen/mojolicious-plugin-bootstrap3>.
