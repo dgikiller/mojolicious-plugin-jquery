@@ -4,7 +4,7 @@ Mojolicious::Plugin::JQuery - Mojolicious + http://jquery.com/
 
 # VERSION
 
-2.1.1
+2.11000
 
 # DESCRIPTION
 
@@ -76,7 +76,7 @@ This module ship the following version of JQuery and JQuery Migrate:
     jquery-2.1.1.js
     jquery-migrate-1.2.1.js
 
-- js/jquery-migrate.js
+- jquery-migrate
 
     The JQuery migrate plugin allow to use old plugin restoring the deprecated functions
     on JQuery 2.x. You can use it simply enabling the migrate option on this plugin.
@@ -119,10 +119,21 @@ Default values:
 
 Search a given file type in all directories of the array.
 
+Required parameters: 
+
+- $dir
+
+    This must be a reference to array of directories where we are looking for
+    our files.
+
+- $type
+
+    This is a string of the file's extension that we are looking for.
+
 # CREDITS
 
-The project [jquery](https://github.com/jquery/jquery) is an opensource project with
-a lot of [contributors](https://github.com/jquery/jquery/graphs/contributors)
+[JQuery](https://github.com/jquery/jquery) is an opensource project with
+a lot of [contributors](https://github.com/jquery/jquery/graphs/contributors), thank you.
 
 Thanks even to [jhthorsen](https://github.com/jhthorsen) because this plugin is widely based
 on his [Bootstrap3 plugin](https://github.com/jhthorsen/mojolicious-plugin-bootstrap3).
