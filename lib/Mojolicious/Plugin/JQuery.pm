@@ -8,7 +8,7 @@ Mojolicious::Plugin::JQuery - Mojolicious + http://jquery.com/
 
 =head1 VERSION
 
-2.11000
+2.11001
 
 =head1 DESCRIPTION
 
