@@ -23,6 +23,8 @@ $t->get_ok($js)
   ->content_like(qr{v2\.(\d+)\.(\d+)}, 'jquery-2.x.js')
   ;
 
+$t->get_ok($js)->status_is(200);
+
 SKIP: {
   mkdir 'lib/Mojolicious/Plugin/JQuery/packed';
   skip "Could not create lib/Mojolicious/Plugin/JQuery/packed: $!", 5 unless -d "lib/Mojolicious/Plugin/JQuery/packed";
@@ -37,7 +39,6 @@ SKIP: {
     unlink "t/public/packed/$_" or die "unlink t/public/packed/$_: $!";
   }
 
-  $t->get_ok($js)->status_is(200);
 }
 
 done_testing;
