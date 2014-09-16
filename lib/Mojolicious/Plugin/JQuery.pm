@@ -162,11 +162,12 @@ sub register {
     push @{ $app->static->paths }, $self->asset_path;
     $app->asset(
         'jquery.js' => $config->{jquery_1}
-        ? ( $location . ( grep /^jquery-1\.(\d+)\.(\d+)\.js$/, @files )[0] )
-        : ( $location . ( grep /^jquery-2\.(\d+)\.(\d+)\.js$/, @files )[0] ),
+        ? ( $location . ( grep /^jquery-1\.(\d+)\.(\d+).js$/, @files )[0] )
+        : ( $location . ( grep /^jquery-2\.(\d+)\.(\d+).js$/, @files )[0] ),
         $config->{migrate} && !( $config->{jquery_1} )
         ? ( $location
-                . ( grep /^jquery-migrate-(\d+)\.(\d+)\.(\d+)\.js/, @files )[0] )
+                . ( grep /^jquery-migrate-(\d+)\.(\d+)\.(\d+).js/, @files )[0]
+            )
         : (),
     );
 
