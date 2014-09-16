@@ -1,5 +1,6 @@
 package Mojolicious::Plugin::JQuery;
 use File::Find;
+use File::Basename ();
 
 =head1 NAME
 
@@ -162,7 +163,7 @@ sub register {
     $app->asset(
         'jquery.js' => $config->{migrate} && !( $config->{jquery_1} )
         ? ( $location
-                . ( grep /^jquery-migrate-(\d+)\.(\d+)\.(\d+).js/, @files )[0]
+                . ( grep /^jquery-migrate-(\d+)\.(\d+)\.(\d+)\.js/, @files )[0]
             )
         : (),
         $config->{jquery_1}
