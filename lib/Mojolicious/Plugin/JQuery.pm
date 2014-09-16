@@ -166,8 +166,7 @@ sub register {
         : ( $location . ( grep /^jquery-2\.(\d+)\.(\d+)\.js$/, @files )[0] ),
         $config->{migrate} && !( $config->{jquery_1} )
         ? ( $location
-                . ( grep /^jquery-migrate-(\d+)\.(\d+)\.(\d+)\.js/, @files )
-                [0] )
+                . ( grep /^jquery-migrate-(\d+)\.(\d+)\.(\d+)\.js/, @files )[0] )
         : (),
     );
 
