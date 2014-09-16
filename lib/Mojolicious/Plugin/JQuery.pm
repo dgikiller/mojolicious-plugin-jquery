@@ -94,7 +94,7 @@ use Mojo::Base 'Mojolicious::Plugin';
 use File::Spec::Functions 'catdir';
 use Cwd ();
 
-our $VERSION = '0.01';
+our $VERSION = '2.11000';
 
 =head1 METHODS
 
