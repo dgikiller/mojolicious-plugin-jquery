@@ -1,6 +1,7 @@
 #!/usr/bin/env perl
+BEGIN { $ENV{MOJO_MODE} ||= 'production' }
 use Mojolicious::Lite;
-plugin 'JQuery';
+plugin 'JQuery', migrate => 1;
 
 get '/' => 'index';
 app->start;
