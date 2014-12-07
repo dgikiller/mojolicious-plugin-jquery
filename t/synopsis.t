@@ -16,13 +16,7 @@ for my $mode ( sort { $mode{$a} <=> $mode{$b} } keys %mode ) {
     $app->routes->get( '/' => 'index' );
 
     $t->get_ok('/');
-
-    if ( $mode eq 'production' ) {
-        $t->element_exists(qq(script[src^="/packed/jquery-"]));
-    }
-    else {
-        $t->element_exists(qq(script[src^="/js/jquery-2."]));
-    }
+    $t->element_exists(qq(script[src^="/packed/jquery-"]));
 }
 
 done_testing;
