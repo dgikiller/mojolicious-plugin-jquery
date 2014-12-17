@@ -2,7 +2,7 @@
 use ExtUtils::MakeMaker;
 WriteMakefile(
   NAME => 'Mojolicious-Plugin-JQuery',
-  AUTHOR => 'Francesco Ferro <dgikiller@users.noreply.github.com>',
+  AUTHOR => 'skullbocks <dgikille@gmail.com>',
   LICENSE => 'artistic_2',
   ABSTRACT_FROM => 'lib/Mojolicious/Plugin/JQuery.pm',
   VERSION_FROM => 'lib/Mojolicious/Plugin/JQuery.pm',
@@ -20,7 +20,6 @@ WriteMakefile(
 ,
   PREREQ_PM => {
   'File::Basename' => '2',
-  'File::Find' => '3',
   'Mojolicious' => '0',
   'Mojolicious::Plugin::AssetPack' => '0',
   'perl' => '5.008005'
