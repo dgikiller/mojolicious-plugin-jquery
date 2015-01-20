@@ -20,6 +20,7 @@ WriteMakefile(
 ,
   PREREQ_PM => {
   'File::Basename' => '2',
+  'File::Find' => '3',
   'Mojolicious' => '0',
   'Mojolicious::Plugin::AssetPack' => '0',
   'perl' => '5.008005'
