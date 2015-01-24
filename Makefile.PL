@@ -23,7 +23,7 @@ WriteMakefile(
   'File::Find' => '3',
   'Mojolicious' => '0',
   'Mojolicious::Plugin::AssetPack' => '0',
-  'perl' => '5.008005'
+  'perl' => '5.010001'
 }
 ,
   test => { TESTS => 't/*.t' },

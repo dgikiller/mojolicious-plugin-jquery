@@ -1,5 +1,7 @@
 Changelog for Mojolicious-Plugin-JQuery
 
+2.13000  Sat Jan 24 23:06:12 2015
+	* Modified Makefile for the right dependency version
 2.13000  Tue Jan 20 01:03:45 2015
 	* Updated to 2.1.3 and 1.11.2
 2.11004  Thu Dec 18 00:07:45 2014
