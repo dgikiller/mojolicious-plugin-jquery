@@ -1,5 +1,7 @@
 Changelog for Mojolicious-Plugin-JQuery
 
+2.13003  Sat Jan 24 23:39:01 2015
+	* Selected another version of File::Find
 2.13002  Sat Jan 24 23:27:38 2015
 	* Forced version of File::Find
 2.13001  Sat Jan 24 23:08:32 2015
