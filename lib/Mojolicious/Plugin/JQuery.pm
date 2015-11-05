@@ -8,7 +8,7 @@ Mojolicious::Plugin::JQuery - Mojolicious + http://jquery.com/
 
 =head1 VERSION
 
-2.13003
+2.14000
 
 =head1 DESCRIPTION
 
@@ -68,16 +68,16 @@ This is done using L<Mojolicious::Plugin::AssetPack>.
 Following the list of the static files of this project. All js are uncompressed
 for developing.
 
-  js/jquery-1.11.1.js
-  js/jquery-2.1.1.js
+  js/jquery-1.11.3.js
+  js/jquery-2.1.4.js
   js/jquery-migrate-1.2.1.js
 
 =head1 Versions installed
 
 This module ship the following version of JQuery and JQuery Migrate:
 
-  jquery-1.11.1.js
-  jquery-2.1.1.js
+  jquery-1.11.3.js
+  jquery-2.1.4.js
   jquery-migrate-1.2.1.js
 
 =over 4
@@ -95,7 +95,7 @@ use Mojo::Base 'Mojolicious::Plugin';
 use File::Spec::Functions 'catdir';
 use Cwd ();
 
-our $VERSION = '2.13003';
+our $VERSION = '2.14000';
 
 =head1 METHODS
 

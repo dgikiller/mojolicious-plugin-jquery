@@ -1,5 +1,7 @@
 Changelog for Mojolicious-Plugin-JQuery
 
+2.14000 2015-11-05T14:34:26+0100
+	* Reflected AssetPack upstream changes 
 2.13003  Sat Jan 24 23:39:01 2015
 	* Selected another version of File::Find
 2.13002  Sat Jan 24 23:27:38 2015
