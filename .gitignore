@@ -6,3 +6,5 @@ MYMETA.*
 !META.json
 /.prove
 /blib
+/lib/Mojolicious/Plugin/JQuery/packed
+/t/public
