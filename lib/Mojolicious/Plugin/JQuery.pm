@@ -8,7 +8,7 @@ Mojolicious::Plugin::JQuery - Mojolicious + http://jquery.com/
 
 =head1 VERSION
 
-2.14000
+2.14001
 
 =head1 DESCRIPTION
 
@@ -95,7 +95,7 @@ use Mojo::Base 'Mojolicious::Plugin';
 use File::Spec::Functions 'catdir';
 use Cwd ();
 
-our $VERSION = '2.14000';
+our $VERSION = '2.14001';
 
 =head1 METHODS
 

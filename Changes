@@ -1,5 +1,7 @@
 Changelog for Mojolicious-Plugin-JQuery
 
+2.14001 2015-11-05T14:38:11+0100
+	* Changed AssetPack required version 
 2.14000 2015-11-05T14:34:26+0100
 	* Reflected AssetPack upstream changes 
 2.13003  Sat Jan 24 23:39:01 2015
