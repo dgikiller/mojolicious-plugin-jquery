@@ -4,7 +4,7 @@ Mojolicious::Plugin::JQuery - Mojolicious + http://jquery.com/ DEPRECATED
 
 # VERSION
 
-3.11000
+3.11001
 
 # DESCRIPTION
 
@@ -68,17 +68,15 @@ Use Mojolicious::Plugin::AssetPack directly instead.
 Following the list of the static files of this project. All js are uncompressed
 for developing.
 
-    js/jquery-1.11.1.js
-    js/jquery-2.1.1.js
-    js/jquery-migrate-1.2.1.js
+    js/jquery-3.1.1.js
+    js/jquery-migrate-1.4.1.js
 
 # Versions installed
 
 This module ship the following version of JQuery and JQuery Migrate:
 
-    jquery-1.11.1.js
-    jquery-2.1.1.js
-    jquery-migrate-1.2.1.js
+    jquery-3.1.1.js
+    jquery-migrate-1.4.1.js
 
 - jquery-migrate
 
@@ -109,12 +107,6 @@ Default values:
 
     This will include the last JQuery Migrate version shipped with this plugin.
     Set this to 1 if you want to include this js.
-
-- jquery\_1
-
-    This will include the last 1.x.x JQuery version shipped with this plugin.
-    Set this to 1 if you want to use this version. 
-    (This option will prevent JQuery Migrate inclusion)
 
 ## find\_files
 
