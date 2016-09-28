@@ -8,7 +8,7 @@ Mojolicious::Plugin::JQuery - Mojolicious + http://jquery.com/
 
 =head1 VERSION
 
-2.14002
+3.11000
 
 =head1 DESCRIPTION
 
@@ -68,24 +68,22 @@ This is done using L<Mojolicious::Plugin::AssetPack>.
 Following the list of the static files of this project. All js are uncompressed
 for developing.
 
-  js/jquery-1.11.3.js
-  js/jquery-2.1.4.js
-  js/jquery-migrate-1.2.1.js
+  js/jquery-3.1.1.js
+  js/jquery-migrate-1.4.1.js
 
 =head1 Versions installed
 
 This module ship the following version of JQuery and JQuery Migrate:
 
-  jquery-1.11.3.js
-  jquery-2.1.4.js
-  jquery-migrate-1.2.1.js
+  jquery-3.1.1.js
+  jquery-migrate-1.4.1.js
 
 =over 4
 
 =item * jquery-migrate
 
 The JQuery migrate plugin allow to use old plugin restoring the deprecated functions
-on JQuery 2.x. You can use it simply enabling the migrate option on this plugin.
+on JQuery 3.x. You can use it simply enabling the migrate option on this plugin.
 
 =back
 
@@ -95,7 +93,7 @@ use Mojo::Base 'Mojolicious::Plugin';
 use File::Spec::Functions 'catdir';
 use Cwd ();
 
-our $VERSION = '2.14002';
+our $VERSION = '3.11000';
 
 =head1 METHODS
 
@@ -135,12 +133,6 @@ Default values:
 This will include the last JQuery Migrate version shipped with this plugin.
 Set this to 1 if you want to include this js.
 
-=item * jquery_1
-
-This will include the last 1.x.x JQuery version shipped with this plugin.
-Set this to 1 if you want to use this version. 
-(This option will prevent JQuery Migrate inclusion)
-
 =back
 
 =cut
@@ -152,7 +144,6 @@ sub register {
     $app->plugin('AssetPack') unless eval { $app->asset };
 
     $config->{migrate}  //= 0;
-    $config->{jquery_1} //= 0;
 
     my $location = "/" . $file_type . "/";
     my @files
@@ -161,16 +152,13 @@ sub register {
 
     push @{ $app->static->paths }, $self->asset_path;
     $app->asset(
-        'jquery.js' => $config->{jquery_1}
-        ? ( $location . ( grep /^jquery-1\.(\d+)\.(\d+)\.js$/, @files )[0] )
-        : ( $location . ( grep /^jquery-2\.(\d+)\.(\d+)\.js$/, @files )[0] ),
-        $config->{migrate} && !( $config->{jquery_1} )
+        'jquery.js' => ( $location . ( grep /^jquery-3\.(\d+)\.(\d+)\.js$/, @files )[0] ),
+        $config->{migrate}
         ? ( $location
                 . ( grep /^jquery-migrate-(\d+)\.(\d+)\.(\d+)\.js$/, @files )[0]
             )
         : (),
     );
-
 }
 
 =head2 find_files

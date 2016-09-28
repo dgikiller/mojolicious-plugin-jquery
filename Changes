@@ -1,5 +1,7 @@
 Changelog for Mojolicious-Plugin-JQuery
 
+3.11000 2016-09-28T11:25:11+0200
+    * Updated JQuery and added backcompatibilty module
 2.14002 2015-11-05T14:51:35+0100
 	* Fixed js missing files 
 2.14001 2015-11-05T14:38:11+0100

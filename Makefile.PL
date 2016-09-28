@@ -21,10 +21,11 @@ WriteMakefile(
   PREREQ_PM => {
   'File::Basename' => '2.0',
   'File::Find' => '1.07',
-  'Mojolicious' => '5.00',
+  'Mojolicious' => '6.00',
   'Mojolicious::Plugin::AssetPack' => '0.68',
+  'Mojolicious::Plugin::AssetPack::Backcompat' => '1.21',
   'perl' => '5.010001'
 }
 ,
-  test => { TESTS => 't/*.t' },
+  test => {TESTS => (-e 'META.yml' ? 't/*.t' : 't/*.t xt/*.t')},
 );

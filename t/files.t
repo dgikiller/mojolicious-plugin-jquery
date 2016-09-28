@@ -8,8 +8,8 @@ use t::Helper;
 my $t = Test::Mojo->new;
 
 for my $file (qw(
-  /js/jquery-2.1.4.js
-  /js/jquery-migrate-1.2.1.js
+  /js/jquery-3.1.1.js
+  /js/jquery-migrate-1.4.1.js
 )) {
   $t->get_ok($file)->status_is(200);
 }

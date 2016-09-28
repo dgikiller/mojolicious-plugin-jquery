@@ -20,7 +20,7 @@ my $js = $t->tx->res->dom->at('script')->{src};
 
 $t->get_ok($js)
   ->status_is(200)
-  ->content_like(qr{v2\.(\d+)\.(\d+)}, 'jquery-2.x.js')
+  ->content_like(qr{v2\.(\d+)\.(\d+)}, 'jquery-3.x.js')
   ;
 
 $t->get_ok($js)->status_is(200);
