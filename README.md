@@ -1,10 +1,10 @@
 # NAME
 
-Mojolicious::Plugin::JQuery - Mojolicious + http://jquery.com/
+Mojolicious::Plugin::JQuery - Mojolicious + http://jquery.com/ DEPRECATED
 
 # VERSION
 
-2.11000
+3.11000
 
 # DESCRIPTION
 
@@ -12,6 +12,10 @@ Mojolicious::Plugin::JQuery - Mojolicious + http://jquery.com/
 JavaScript files into your project.
 
 This is done using [Mojolicious::Plugin::AssetPack](https://metacpan.org/pod/Mojolicious::Plugin::AssetPack).
+
+This module will be DEPRECATED.
+
+Use Mojolicious::Plugin::AssetPack directly instead.
 
 # SYNOPSIS
 
